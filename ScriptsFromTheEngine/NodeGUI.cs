@@ -6,6 +6,7 @@ public class NodeGUI : MonoBehaviour
 {
     public Material inactive;
     public Material active;
+    public Material visited;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,5 +27,10 @@ public class NodeGUI : MonoBehaviour
     public void setInactive()
     {
         this.gameObject.GetComponent<Renderer>().material = inactive;
+    }
+
+    public void setVisited()
+    {
+        this.gameObject.GetComponent<Renderer>().material = visited;
     }
 }
