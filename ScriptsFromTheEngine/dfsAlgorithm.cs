@@ -10,6 +10,8 @@ public class dfsAlgorithm : MonoBehaviour
     for a keypress or button press if in vr to execute another step. It will go until it reaches the end node
     Should give a generally good idea of how to implement future algorithms
     */
+    public bool isLinear = true; //IsLinear is necissary to declare in all algorithm functions, as it tells the handler 
+                                //whether or not it should teleport the player to the current node
     //NOTICE: this version of DFS does not randomly pick the next node, instead it picks the shortest path
     public algorithmControler thisAlgorithmsControler;
     private bool first = true;
@@ -18,7 +20,7 @@ public class dfsAlgorithm : MonoBehaviour
     public bool done = false;
     //dfs specific stuff
     Stack<nodeData> dfsStack = new Stack<nodeData>();
-    nodeData currentNode;
+    nodeData currentNode; //Also is needed in every algorithm function as the AlgorithmHandler needs to know the current node to teleport the player to it
     // Update is called once per frame
     void Update()
     {
@@ -41,9 +43,11 @@ public class dfsAlgorithm : MonoBehaviour
     {
         startNode = thisAlgorithmsControler.startingNode;
         endNode = thisAlgorithmsControler.endingNode;
-        startNode.setActive();
+        startNode.setStart();
+        endNode.setEnd();
         dfsStack.Push(startNode);
         currentNode = startNode;
+        thisAlgorithmsControler.currentNode = currentNode;
         Debug.Log("Algorithm Started");
     }
 
@@ -59,6 +63,7 @@ public class dfsAlgorithm : MonoBehaviour
                 dfsStack.Pop();
                 currentNode = dfsStack.Peek();
                 currentNode.setActive();
+                thisAlgorithmsControler.currentNode = currentNode;
             }
             else
             {
@@ -66,6 +71,7 @@ public class dfsAlgorithm : MonoBehaviour
                 edgeToColor.visitEdge();
                 currentNode = temp;
                 currentNode.setActive();
+                thisAlgorithmsControler.currentNode = currentNode;
                 dfsStack.Push(temp);
             }
         }
@@ -73,5 +79,6 @@ public class dfsAlgorithm : MonoBehaviour
         {
             done = true;
         }
+        startNode.setStart(); //just incase start gets overwritten on a backtrack
     }
 }

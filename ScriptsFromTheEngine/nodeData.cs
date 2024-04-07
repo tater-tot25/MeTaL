@@ -9,6 +9,7 @@ public class nodeData : MonoBehaviour
     public List<edgeData> connectedEdges;
     public bool isVisited = false;
     public NodeGUI connectedGUIElement;
+    public float shortestPathValue = 10000; //set to super large number so that this works with dijkstras aka the distance between this node and the starting node
 
     public void Start()
     {
@@ -104,6 +105,21 @@ public class nodeData : MonoBehaviour
     {
         isVisited = true;
         connectedGUIElement.setActive();
+    }
+
+    public void setEnd()
+    {
+        connectedGUIElement.setEnd();
+    }
+
+    public void setStart()
+    {
+        connectedGUIElement.setStart();
+    }
+
+    public void setCandidate()
+    {
+        connectedGUIElement.setCandidate();
     }
 
     public edgeData getEdgeConnectedToNodeX(nodeData nodeToConnect)

@@ -7,6 +7,9 @@ public class NodeGUI : MonoBehaviour
     public Material inactive;
     public Material active;
     public Material visited;
+    public Material endNode;
+    public Material startNode;
+    public Material candidateNode;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +35,20 @@ public class NodeGUI : MonoBehaviour
     public void setVisited()
     {
         this.gameObject.GetComponent<Renderer>().material = visited;
+    }
+
+    public void setEnd()
+    {
+        this.gameObject.GetComponent<Renderer>().material = endNode;
+    }
+
+    public void setCandidate()
+    {
+        this.gameObject.GetComponent<Renderer>().material = candidateNode;
+    }
+
+    public void setStart()
+    {
+        this.gameObject.GetComponent<Renderer>().material = startNode;
     }
 }
