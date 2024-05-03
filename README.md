@@ -1,6 +1,10 @@
 # MeTaL
 A ground up remake of metal built in Unity for use with VR Headsets, taking place on the Whitman campus
-Asset Download Link: https://www.dropbox.com/scl/fi/ia5fcntsgbd2x69vbkvru/MeTaL_VR_1.1.1.Assets.unitypackage?rlkey=rt5rmzrtt0jzdl6nkiyt3gxv5&st=72hqicxt&dl=0
+
+
+Asset Download Link: 
+
+https://www.dropbox.com/scl/fi/ia5fcntsgbd2x69vbkvru/MeTaL_VR_1.1.1.Assets.unitypackage?rlkey=rt5rmzrtt0jzdl6nkiyt3gxv5&st=72hqicxt&dl=0
 
 Developed on Unity -V 2021.3.22f1
 
