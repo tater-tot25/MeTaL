@@ -46,7 +46,7 @@ public class nodeData : MonoBehaviour
     }
 
     //given two nodes, determine which node is the node we are not at
-    private nodeData getOutGoingNode(GameObject nodeOne, GameObject nodeTwo)
+    public nodeData getOutGoingNode(GameObject nodeOne, GameObject nodeTwo)
     {
         if (nodeOne == this.gameObject)
         {
@@ -83,6 +83,7 @@ public class nodeData : MonoBehaviour
                         currentShortest = edge;
                     }
                 }
+                
             }
             return returnVal;
         }
